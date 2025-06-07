@@ -12,9 +12,7 @@ const searchQuery = ref('');
 
 const fetchBooks = async () => {
 	try {
-		console.log('1: Initiate fetch');
 		const URL = searchQuery.value ? `${API_URL}books?search=${searchQuery.value}` : `${API_URL}books`;
-		console.log('2: Check API-URL' + URL);
 
 		const response = await fetch(URL);
 
@@ -23,7 +21,6 @@ const fetchBooks = async () => {
 		}
 
 		const data = await response.json();
-		console.log('3: Log fetched data: ' + data);
 		books.value = data;
 	} catch (error) {
 		console.error('Error fetching books: ' + error); //TODO: Add better error-handling

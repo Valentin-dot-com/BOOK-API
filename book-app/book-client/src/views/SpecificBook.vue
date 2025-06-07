@@ -23,7 +23,6 @@ const successMessage = ref('');
 const fetchBook = async () => {
   try {
     const response = await axios.get(`${API_URL}books/${bookId}`);
-    console.log('Book data:', response.data)
     book.value = response.data;
   } catch (error) {
     console.error('Error loading book:', error);

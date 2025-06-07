@@ -17,15 +17,12 @@ const isOpen = ref(false);
 
 function toggleMenu() {
 	isOpen.value = !isOpen.value;
-	console.log('isOpen: ' + isOpen.value);
 }
 
 const isMobile = ref(window.innerWidth <= 767);
-console.log('Is mobile?: ' + isMobile.value);
 
 function updateWindowResize() {
 	isMobile.value = window.innerWidth <= 767;
-	console.log('Is mobile?:' + isMobile.value);
 }
 
 function setupResizeListener() {

@@ -10,17 +10,12 @@ function checkScroll() {
     
     if (route.path === '/') {
         screenHieght.value = window.innerHeight * 0.75; // TODO: Korrigera värdet om det behövs
-        console.log('Du ÄR inne på startsidan');
 
     }else {
         screenHieght.value = window.innerHeight * 0.375; // TODO: Korrigera värdet om det behövs
-        console.log('Du är inte inne på startsidan');
     }
     
-    console.log('Screenheight: ' + screenHieght.value);
-    
     if(window.scrollY > screenHieght.value) {
-        console.log(window.scrollY > screenHieght.value);
         isScrolled.value = true;
 
     }else {
