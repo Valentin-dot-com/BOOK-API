@@ -296,24 +296,23 @@ main {
     }
   }
   .review-section{
-    width: 100%;
-    padding-right: 40px;
-    padding-left: 40px;
+    // width: 100%;
+    padding: 2.5rem;
     margin-inline: 2rem;
     height: 500px;
     display: flex;
     flex-direction: row;
     background-color: $color-primary;
     justify-content: space-between;
-    gap: 50px;
-    border-radius: 16px;
+    // gap: 50px;
+    border-radius: 1rem;
     .make-review-section {
       width: 50%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       height: 500px;
-      gap: 20px;
+      gap: 1.5rem;
       h2{
         font-family: $font-title;
         font-size: $h-small;
@@ -408,8 +407,6 @@ main {
     .reviews {
       width: 50%;
       height: 450px;
-      margin-top: 20px;
-      margin-bottom: 20px;
       scroll-behavior: smooth;
       h2{
         color: white;
