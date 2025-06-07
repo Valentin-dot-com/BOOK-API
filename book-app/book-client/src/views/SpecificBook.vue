@@ -103,18 +103,18 @@ onMounted(fetchBook);
         <h2>Add a Review</h2>
         <form @submit.prevent="submitReview">
           <div>
-            <label for="name">Name:</label>
+            <label class="form-label" for="name">Name:</label>
             <input v-model="form.name" id="name" required />
           </div>
           <div>
-            <label for="rating">Rating (1-5):</label>
+            <label class="form-label" for="rating">Rating (1-5):</label>
             <select v-model.number="form.rating" id="rating" required>
               <option disabled value="">Select rating</option>
               <option v-for="n in 5" :key="n" :value="n">{{ n }} Star</option>
             </select>
           </div>
           <div>
-            <label for="content">Review:</label>
+            <label class="form-label" for="content">Review:</label>
             <textarea v-model="form.content" id="content" required></textarea>
           </div>
           <p v-if="successMessage" class="success-message">{{ successMessage }}</p>
@@ -147,8 +147,6 @@ onMounted(fetchBook);
 <style lang="scss" scoped>
 
 main {
-  padding-right: 40px;
-  padding-left: 40px;
   background-color: $color-background;
   height: 100%;
   width: 100%;
@@ -301,6 +299,7 @@ main {
     width: 100%;
     padding-right: 40px;
     padding-left: 40px;
+    margin-inline: 2rem;
     height: 500px;
     display: flex;
     flex-direction: row;
@@ -465,6 +464,10 @@ main {
       }
     }
 
+  }
+  .form-label {
+    font-family: $font-paragraph;
+    font-size: $h-small-mobile;
   }
 
 }
