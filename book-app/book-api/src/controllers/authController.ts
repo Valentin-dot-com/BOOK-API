@@ -33,7 +33,7 @@ export const loginUser = async (req: Request, res: Response) => {
         { expiresIn: "7d" }
       );
   
-      res.cookie('accessToken', 'accessToken', {
+      res.cookie('accessToken', accessToken, {
         httpOnly: true,
         secure: true,
         sameSite: 'none',
