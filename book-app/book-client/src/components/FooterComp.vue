@@ -41,6 +41,10 @@
 
 <style lang="scss" scoped>
 
+a, h2, span {
+    font-family: $font-paragraph;
+}
+
 .footer-container{
     background-color: $color-primary;
     height: 100px;
