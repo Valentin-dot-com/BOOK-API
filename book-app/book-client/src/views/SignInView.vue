@@ -11,9 +11,8 @@ const error = ref('');
 
 const useAuth = useAuthStore();
 
-function handleLogin() {
-    useAuth.login(username.value, password.value);
-
+async function handleLogin() {
+    await useAuth.login(username.value, password.value);
     router.push('/admin')
 }
 
