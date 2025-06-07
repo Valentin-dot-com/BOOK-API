@@ -256,6 +256,9 @@ main {
 }
 
 @media screen and (min-width: 768px) {
+	main {
+		margin-top: 0;
+	}
 	.book {
 		margin-inline: 10%;
 		.book-info-container {
@@ -266,7 +269,6 @@ main {
 
 @media screen and (min-width: 1300px) {
 	main {
-		margin-top: 0;
 		.hero-section {
 			h1 {
 				margin-left: 10rem;

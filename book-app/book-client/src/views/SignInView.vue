@@ -21,8 +21,6 @@ async function handleLogin() {
 <template>
       
         <AuthView
-
-
             :title="'Welcome to The Lumos Library'"
             :submitText="'Log in'"
             :onSubmitHandler="handleLogin"
