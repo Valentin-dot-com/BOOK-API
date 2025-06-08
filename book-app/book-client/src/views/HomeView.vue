@@ -299,14 +299,14 @@ main {
 	}
 	.book {
 		max-width: 90%;
-		margin-bottom: 9rem;
+		margin-bottom: 20rem;
 		article {
 			flex-direction: row;
 		}
 		img {
 			max-width: 40%;
 			min-width: 40%;
-			height: 450px;
+			// height: 450px;
 		}
 		.book-info-container {
 			position: absolute;
@@ -314,8 +314,8 @@ main {
 			top: 1.5rem;
 			min-width: 65%;
 			max-width: 65%;
-			min-height: 100%;
-			padding: 4rem;
+			min-height: 30rem;
+			// padding: 4rem;
 			padding-left: 6rem;
 			a {
 				position: absolute;
@@ -323,6 +323,12 @@ main {
 				
 			}
 		}
+	}
+}
+
+@media screen and (min-width: 2000px) {
+	.book {
+		margin-bottom: 10rem;
 	}
 }
 </style>

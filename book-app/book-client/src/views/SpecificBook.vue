@@ -325,7 +325,7 @@ main {
         gap: 15px;
         height: auto;
         div{
-          width: 600px;
+          // width: 600px;
           height: auto;
           display: flex;
           flex-direction: column;
@@ -525,6 +525,7 @@ main {
     .review-section{
       padding-right: 20px;
       padding-left:20px;
+      margin-inline: 0;
       width: 100%;
       flex-direction: column;
       justify-content: end;
