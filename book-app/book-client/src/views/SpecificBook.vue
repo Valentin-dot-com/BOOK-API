@@ -3,6 +3,7 @@ import { onMounted, ref } from 'vue';
 import { useRoute } from 'vue-router';
 import { reactive } from 'vue';
 import axios from 'axios';
+import LoadingBar from '@/components/LoadingBar.vue';
 
 const route = useRoute();
 const bookId = route.params.id;
@@ -140,11 +141,21 @@ onMounted(fetchBook);
     </div>
   </main>
   <!-- If No books-->
-  <p v-else>Loading book...</p>
+  <div v-else class="loading-container">
+    <LoadingBar />
+  </div>
 </template>
 
 
 <style lang="scss" scoped>
+
+.loading-container {
+  min-width: 100dvw;
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 main {
   background-color: $color-background;
