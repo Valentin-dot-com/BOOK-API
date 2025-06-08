@@ -1,4 +1,5 @@
 <script setup>
+import LoadingBar from '@/components/LoadingBar.vue';
 import { onMounted, ref } from 'vue';
 import { RouterLink } from 'vue-router';
 
@@ -9,9 +10,12 @@ const scrollDown = () => {
 const API_URL = import.meta.env.VITE_API_URL;
 const books = ref([]);
 const searchQuery = ref('');
+const loading = ref(true);
+const isError = ref(false);
 
 const fetchBooks = async () => {
 	try {
+		loading.value = true;
 		const URL = searchQuery.value ? `${API_URL}books?search=${searchQuery.value}` : `${API_URL}books`;
 
 		const response = await fetch(URL);
@@ -22,8 +26,11 @@ const fetchBooks = async () => {
 
 		const data = await response.json();
 		books.value = data;
+		loading.value = false;
 	} catch (error) {
+		loading.value = false;
 		console.error('Error fetching books: ' + error); //TODO: Add better error-handling
+		isError.value = true;
 	}
 };
 
@@ -53,6 +60,15 @@ onMounted(fetchBooks);
 					<span class="material-symbols-outlined"> search </span>
 				</button>
 			</form>
+
+			<div v-if="loading" class="loading-container">
+				<LoadingBar />
+			</div>
+
+			<div v-if="isError" class="error-message">
+				<span>Something went wrong, please try again later</span>
+			</div>
+
 			<div class="book-list-container">
 				<div class="book" id="book-list" v-for="book in books" :key="book._id">
 					<article>
@@ -122,6 +138,16 @@ main {
 		span:hover {
 			color: $color-secondary;
 		}
+	}
+}
+.loading-container {
+	margin-bottom: 10rem;
+}
+
+.error-message {
+	margin-bottom: 10rem;
+	span {
+		font-family: $font-paragraph;
 	}
 }
 .book-section {
