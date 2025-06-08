@@ -72,7 +72,7 @@ if (useAuth.isAuthenticated) {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 10;
-	width: 10dvw;
+	width: 100dvw;
 	height: 100dvh;
 	// background-color: $color-background;
 	// filter: blur(2px);
