@@ -3,17 +3,25 @@ import { ref } from 'vue'
 import { useRouter } from 'vue-router';
 import AuthView from '../components/AuthView.vue'
 import useAuthStore from '@/stores/useAuthStore';
+import LoadingBar from '@/components/LoadingBar.vue';
 
 const username = ref('');
 const password = ref('');
 const router = useRouter()
 const error = ref('');
+const loading = ref(false);
 
 const useAuth = useAuthStore();
 
 async function handleLogin() {
+    loading.value = true;
     await useAuth.login(username.value, password.value);
+    loading.value = false;
     router.push('/admin')
+}
+
+if (useAuth.isAuthenticated) {
+    router.push('/admin');
 }
 
 </script>
@@ -26,8 +34,7 @@ async function handleLogin() {
             :onSubmitHandler="handleLogin"
             :errorMessage="error"
             @update:username="username = $event"
-            @update:password="password = $event"
-        >
+            @update:password="password = $event">
 
             <template #goBackLink>
                 <RouterLink to="/" class="authview-go-back-link">
@@ -45,9 +52,32 @@ async function handleLogin() {
                 </div>
             </template>
         </AuthView>
+        <div v-if="loading" class="loading-container">
+            <LoadingBar />
+        </div>
 </template>
 
 <style lang="scss" scoped>
+
+.loading-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    width: 90%;
+    height: 75%;
+    // background-color: $color-background;
+    // filter: blur(2px);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div {
+        color: white;
+    }
+}
 
 .authview-form-button{
         border-radius: $border-small;
