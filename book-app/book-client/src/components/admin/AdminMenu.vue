@@ -58,7 +58,7 @@ async function handleLogout() {
 		<menu class="mobile-menu" :class="{ open: isOpen }">
             <RouterLink to="/admin-users" class="menu-links mobile" :class="{ active: currentPage === '/admin-users' }">Users</RouterLink>
 			<RouterLink to="/admin-books" class="menu-links mobile" :class="{ active: currentPage === '/admin-books' }">Books</RouterLink>
-			<button class="sign-out-btn"><span class="material-symbols-outlined"  @click="handleLogout">logout</span>Sign out</button>
+			<button class="sign-out-btn" @click="handleLogout"><span class="material-symbols-outlined">logout</span>Sign out</button>
 
 		</menu>
 	</header>
@@ -74,7 +74,7 @@ async function handleLogout() {
 		<div class="user-container">
 			<!-- TODO: Fixa så att den faktiskt loggar ut... -->
 			
-			<button class="sign-out-btn"><span class="material-symbols-outlined"  @click="handleLogout">logout</span>Sign out</button>
+			<button class="sign-out-btn" @click="handleLogout"><span class="material-symbols-outlined">logout</span>Sign out</button>
 			
 			<div class="user-info-container">
 				<img
