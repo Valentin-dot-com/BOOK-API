@@ -53,6 +53,7 @@ import { RouterLink } from 'vue-router';
 				font-family: $font-paragraph;
 				font-size: $h-small;
 				flex-basis: 100%;
+				text-align: center;
 			}
 			a {
 				font-family: $font-paragraph;
