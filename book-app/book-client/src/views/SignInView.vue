@@ -101,6 +101,12 @@ if (useAuth.isAuthenticated) {
 	padding-right: 2rem;
 	padding-left: 2rem;
 	font-size: $h-small-mobile;
+	transition: 0.2s ease-in-out;
+	cursor: pointer;
+}
+
+.authview-form-button:hover {
+	background-color: $color-secondary;
 }
 
 .authview-sign-in-without-login-wrapper {
@@ -120,6 +126,12 @@ if (useAuth.isAuthenticated) {
 	text-decoration: none;
 	color: $color-black;
 	margin-bottom: 2rem;
+    transition: 0.2s ease-in-out;
+}
+
+.authview-go-back-link:hover {
+    cursor: pointer;
+    color: $color-red;
 }
 
 @media (min-width: 700px) {

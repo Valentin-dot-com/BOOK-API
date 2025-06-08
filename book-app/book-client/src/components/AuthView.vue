@@ -128,6 +128,12 @@ h2{
         padding-right: 2rem;
         padding-left: 2rem;
         font-size: $h-small-mobile;
+        transition: 0.2s ease-in-out;
+        cursor: pointer;
+}
+
+.authview-form-button:hover {
+    background-color: $color-secondary;
 }
 
 // .authview-go-back-link {
