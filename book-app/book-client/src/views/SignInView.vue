@@ -72,8 +72,8 @@ if (useAuth.isAuthenticated) {
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 10;
-	width: 90%;
-	height: 75%;
+	width: 10dvw;
+	height: 100dvh;
 	// background-color: $color-background;
 	// filter: blur(2px);
 	backdrop-filter: blur(2px);
