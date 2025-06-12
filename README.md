@@ -1,7 +1,7 @@
 # The Lumos Library
 ## Project
 
-In this project we built a website whhich allows the user to browse, review and manage a collection of books. The books are located in an API that we built with a back-end of MongoDB as database and an Express server, the frontend interface is built with Vue and TypeScript. The application also includes user authentication, admin-only access for managing content, and public access for viewing booksand submitting reviews.
+In this project we built a website whhich allows the user to browse, review and manage a collection of books. The books are located in an API that we built with a back-end of MongoDB as database and an Express server, the frontend interface is built with Vue and TypeScript. The application also includes user authentication, admin-only access for managing content, and public access for viewing books and submitting reviews. Check the client out on this link: https://book-client-seven.vercel.app/ & the API on this link: https://book-api-mauve.vercel.app/books 
 
 <details>
 <summary><strong>Screenshots of website</strong> <i>(6 images)</i></summary>
